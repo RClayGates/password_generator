@@ -4,8 +4,8 @@
 
 # import: local
 import rc_cache
-# from rc_logger import logger
 from Gui import rc_gui
+# from rc_logger import logger
 
 # const/global
 

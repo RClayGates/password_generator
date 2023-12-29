@@ -34,6 +34,7 @@ class PwgenApp:
 
         self.primary_key_var = tk.StringVar()
         primary_key_entry = ttk.Entry(entry_frame, textvariable=self.primary_key_var)
+        primary_key_entry.bind("<Return>", lambda event: self.button_1())
         primary_key_entry.grid(column=1, padx="0 6", pady=6, row=0)
 
         button1 = ttk.Button(entry_frame, command=lambda: self.button_1())
@@ -163,8 +164,7 @@ class PwgenApp:
         add_entry = self.kwargs.get('add')
         if add_entry:
             add_entry(url)
-
-        print('2')
+        self.button_1()
         pass
 
     def button_3(self):
@@ -175,6 +175,7 @@ class PwgenApp:
             if regen_pw:
                 regen_pw(self.treeview1_select())
             pass
+        self.button_1()
         pass
     
     def button_4(self):
@@ -185,6 +186,7 @@ class PwgenApp:
             if remove_pw:
                 remove_pw(self.treeview1_select())
             pass
+        self.button_1()
         pass
     
     def button_5(self):
